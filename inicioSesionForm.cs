@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Clave5_Grupo4
 {
-    public partial class Form1 : Form
+    public partial class inicioSesionForm : Form
     {
-        public Form1()
+        public inicioSesionForm()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
