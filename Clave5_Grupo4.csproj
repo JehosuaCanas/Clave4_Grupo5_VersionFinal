@@ -66,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EventosEspeciales.resx">
+      <DependentUpon>EventosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inicioSesionForm.resx">
       <DependentUpon>inicioSesionForm.cs</DependentUpon>
     </EmbeddedResource>
