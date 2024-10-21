@@ -7,13 +7,15 @@ using MySql.Data.MySqlClient;
 
 namespace Clave5_Grupo4
 {
-    class Usuario
+    // Modelo de Usuario
+    public class Usuario
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Tipo { get; set; }
         public string Email { get; set; }
     }
+
     // Servicio para la gestión de usuarios
     public class UsuarioService
     {
@@ -131,6 +133,4 @@ namespace Clave5_Grupo4
             }
         }
     }
-
-
 }

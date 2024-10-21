@@ -31,10 +31,10 @@ namespace Clave5_Grupo4
         {
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtContraseñatxtContraseña = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@ namespace Clave5_Grupo4
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtContraseñatxtContraseña);
+            this.groupBox1.Controls.Add(this.txtContraseña);
             this.groupBox1.Controls.Add(this.btnIniciarSesion);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label2);
@@ -62,14 +62,20 @@ namespace Clave5_Grupo4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iniciar Sesion";
             // 
-            // label1
+            // txtContraseña
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email";
+            this.txtContraseña.Location = new System.Drawing.Point(127, 100);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(148, 20);
+            this.txtContraseña.TabIndex = 3;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(127, 61);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(148, 20);
+            this.txtEmail.TabIndex = 2;
             // 
             // label2
             // 
@@ -80,20 +86,14 @@ namespace Clave5_Grupo4
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña";
             // 
-            // txtEmail
+            // label1
             // 
-            this.txtEmail.Location = new System.Drawing.Point(127, 61);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(148, 20);
-            this.txtEmail.TabIndex = 2;
-            // 
-            // txtContraseñatxtContraseña
-            // 
-            this.txtContraseñatxtContraseña.Location = new System.Drawing.Point(127, 100);
-            this.txtContraseñatxtContraseña.Name = "txtContraseñatxtContraseña";
-            this.txtContraseñatxtContraseña.PasswordChar = '*';
-            this.txtContraseñatxtContraseña.Size = new System.Drawing.Size(148, 20);
-            this.txtContraseñatxtContraseña.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Email";
             // 
             // inicioSesionForm
             // 
@@ -114,7 +114,7 @@ namespace Clave5_Grupo4
 
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtContraseñatxtContraseña;
+        private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
