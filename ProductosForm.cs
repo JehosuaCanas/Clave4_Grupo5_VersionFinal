@@ -11,10 +11,7 @@ namespace Clave5_Grupo4
         private int productoIdSeleccionado = -1;
         private Conexion db;
 
-        public ProductosForm()
-        {
-            InitializeComponent();
-        }
+
         public ProductosForm()
         {
             InitializeComponent();
