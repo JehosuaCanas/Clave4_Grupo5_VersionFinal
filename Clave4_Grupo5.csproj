@@ -93,6 +93,9 @@
     <EmbeddedResource Include="LocalesForm.resx">
       <DependentUpon>LocalesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductosForm.resx">
       <DependentUpon>ProductosForm.cs</DependentUpon>
     </EmbeddedResource>

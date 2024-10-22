@@ -106,6 +106,7 @@ namespace Clave5_Grupo4
             this.btnCrearProducto.TabIndex = 24;
             this.btnCrearProducto.Text = "Agregar Producto";
             this.btnCrearProducto.UseVisualStyleBackColor = true;
+            this.btnCrearProducto.Click += new System.EventHandler(this.btnCrearProducto_Click_1);
             // 
             // cmbTipoProducto
             // 

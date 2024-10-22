@@ -201,6 +201,11 @@ namespace Clave5_Grupo4
 
             return true;
         }
+
+        private void btnCrearProducto_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
