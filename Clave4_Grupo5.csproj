@@ -63,6 +63,7 @@
     <Compile Include="inicioSesionForm.Designer.cs">
       <DependentUpon>inicioSesionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Locales.cs" />
     <Compile Include="LocalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
