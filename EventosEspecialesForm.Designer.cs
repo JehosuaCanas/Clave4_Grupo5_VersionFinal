@@ -1,7 +1,7 @@
 ﻿
 namespace Clave5_Grupo4
 {
-    partial class EventosEspeciales
+    partial class EventosEspecialesForm
     {
         /// <summary>
         /// Required designer variable.

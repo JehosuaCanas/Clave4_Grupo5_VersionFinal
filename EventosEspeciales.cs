@@ -1,50 +1,29 @@
-﻿using System;
-using System.Windows.Forms;
+﻿
+
+using MySql.Data.MySqlClient;
 
 namespace Clave5_Grupo4
 {
-    public partial class EventosEspeciales : Form
+    public class EventosEspeciales
     {
-        private readonly EventosEspeciales eventosEspeciales; // Instancia de la clase EventosEspeciales
-        public EventosEspeciales()
-        {
-            InitializeComponent();
-            var db = new Conexion(); // Crear la instancia de conexión
-            eventosEspeciales = new EventosEspeciales(db); // Inicializar EventosEspeciales con la conexión
-        }
-        private void btnCrearEventosEspecial_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int pedidoId = Convert.ToInt32(txtPedidoId.Text);
-                string nombreEvento = txtNombreEvento.Text;
-                decimal montoMinimo = Convert.ToDecimal(txtMontoMinimo.Text);
-                decimal montoMaximo = Convert.ToDecimal(txtMontoMaximo.Text);
+        private readonly MySqlConnection connection;
 
-                // Llamar al método para crear el evento especial
-                eventosEspeciales.CrearPedidoEventoEspecial(pedidoId, nombreEvento, montoMinimo, montoMaximo);
-                MessageBox.Show("Evento especial creado exitosamente");
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Error de formato: Asegúrate de que los campos sean válidos.\n" + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}");
-            }
-
-            LimpiarFormulario();
+        public EventosEspeciales(Conexion dbConnection)
+        {
+            connection = dbConnection.Connection;
         }
 
-        private void LimpiarFormulario()
+        public void CrearPedidoEventoEspecial(int pedidoId, string nombre, decimal montoMinimo, decimal montoMaximo)
         {
-            txtPedidoId.Clear();
-            txtNombreEvento.Clear();
-            txtMontoMaximo.Clear();
-            txtMontoMinimo.Clear();
-            txtNombreEvento.Focus();
+            string query = "INSERT INTO eventos_especiales (pedido_id, nombre, monto_minimo, monto_maximo) VALUES (@pedidoId, @nombre, @montoMinimo, @montoMaximo)";
+            using (var cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@pedidoId", pedidoId);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@montoMinimo", montoMinimo);
+                cmd.Parameters.AddWithValue("@montoMaximo", montoMaximo);
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }
-    
