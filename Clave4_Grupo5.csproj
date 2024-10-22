@@ -75,6 +75,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="ProductosForm.cs">
       <SubType>Form</SubType>
