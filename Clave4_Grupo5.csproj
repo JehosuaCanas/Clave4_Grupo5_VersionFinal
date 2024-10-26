@@ -84,6 +84,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs" />
+    <Compile Include="PedidosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosForm.Designer.cs">
+      <DependentUpon>PedidosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs" />
     <Compile Include="ProductosForm.cs">
       <SubType>Form</SubType>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosForm.resx">
+      <DependentUpon>PedidosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosForm.resx">
       <DependentUpon>ProductosForm.cs</DependentUpon>
