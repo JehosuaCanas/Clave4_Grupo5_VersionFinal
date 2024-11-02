@@ -24,7 +24,7 @@ namespace  Clave5_Grupo4
             // Puedes agregar código aquí si es necesario al cargar el formulario
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
             string contrasena = txtContraseña.Text;
@@ -61,6 +61,7 @@ namespace  Clave5_Grupo4
             {
                 MessageBox.Show("Email o contraseña incorrectos.");
             }
+
         }
     }
 }
