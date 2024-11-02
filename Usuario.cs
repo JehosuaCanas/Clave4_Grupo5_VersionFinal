@@ -1,48 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Clave5_Grupo4
 {
-    // Modelo de Usuario
     public class Usuario
     {
+        // Atributos de usuario
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Tipo { get; set; }
         public string Email { get; set; }
-    }
 
-    // Servicio para la gestión de usuarios
-    public class UsuarioService
-    {
+        // Conexión de base de datos
         private readonly MySqlConnection connection;
 
-        // Constructor que recibe una instancia de Database
-        public UsuarioService(Conexion db)
+        // Constructor que recibe una conexión de base de datos
+        public Usuario(MySqlConnection dbConnection)
         {
-            this.connection = db.Connection; // Acceso a la propiedad Connection correctamente
+            this.connection = dbConnection;
         }
 
+        // Métodos para gestionar usuarios
         public Usuario ValidarUsuario(string email, string contrasena)
         {
-            // Consulta SQL la cual busca el usuario que coincida con los datos ingresados 
             string query = "SELECT id, nombre, tipo FROM usuarios WHERE email = @Email AND contraseña = @Contrasena";
             using (var cmd = new MySqlCommand(query, connection))
             {
-                // Se agregan los valores de email y contraseña a la consulta SQL
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Contrasena", contrasena);
 
-                // Ejecuta la consulta y devuelve un objeto que permite leer los resultados de la consulta fila por fila.
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        return new Usuario
+                        return new Usuario(connection)
                         {
                             Id = Convert.ToInt32(reader["id"]),
                             Nombre = reader["nombre"].ToString(),
@@ -51,12 +45,12 @@ namespace Clave5_Grupo4
                     }
                 }
             }
-            return null; // Usuario no encontrado o credenciales incorrectas
+            return null;
         }
 
         public void CrearUsuario(string nombre, string tipo, string email, string contraseña)
         {
-            string query = "INSERT INTO usuarios (nombre, tipo,email,contraseña) VALUES (@nombre, @tipo,@email,@contraseña)";
+            string query = "INSERT INTO usuarios (nombre, tipo, email, contraseña) VALUES (@nombre, @tipo, @email, @contraseña)";
             using (var cmd = new MySqlCommand(query, connection))
             {
                 cmd.Parameters.AddWithValue("@nombre", nombre);
@@ -76,7 +70,7 @@ namespace Clave5_Grupo4
             {
                 while (reader.Read())
                 {
-                    usuarios.Add(new Usuario
+                    usuarios.Add(new Usuario(connection)
                     {
                         Id = Convert.ToInt32(reader["id"]),
                         Nombre = reader["nombre"].ToString(),
@@ -87,28 +81,36 @@ namespace Clave5_Grupo4
             }
             return usuarios;
         }
-
         public List<Usuario> ObtenerUsuariosConId()
         {
-            //// Se crea una lista vacia
             List<Usuario> usuarios = new List<Usuario>();
-            //Se hace una consulta a la base de datos para obtener los datos que contiene la tabla de usuarios
-            string query = "SELECT id, nombre FROM usuarios";
-            using (var cmd = new MySqlCommand(query, connection))
-            ////se crea un nuevo objeto Usuario con el ID y nombre extraído de la base de datos y se añade a la lista usuarios.
-            using (var reader = cmd.ExecuteReader())
+            string query = "SELECT id, nombre FROM usuarios"; // Consulta simple para probar
+
+            try
             {
-                while (reader.Read())
+                using (var cmd = new MySqlCommand(query, connection))
                 {
-                    usuarios.Add(new Usuario
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        Id = Convert.ToInt32(reader["id"]),
-                        Nombre = reader["nombre"].ToString()
-                    });
+                        while (reader.Read())
+                        {
+                            usuarios.Add(new Usuario(connection)
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Nombre = reader["nombre"].ToString()
+                            });
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener usuarios: {ex.Message}");
+            }
+
             return usuarios;
         }
+
 
         public void ModificarUsuario(int id, string nombre, string tipo, string email)
         {
