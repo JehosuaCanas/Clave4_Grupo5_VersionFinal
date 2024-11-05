@@ -47,6 +47,7 @@ namespace Clave5_Grupo4
             this.lstLocales.Name = "lstLocales";
             this.lstLocales.Size = new System.Drawing.Size(443, 160);
             this.lstLocales.TabIndex = 17;
+            this.lstLocales.SelectedIndexChanged += new System.EventHandler(this.lstLocales_SelectedIndexChanged_1);
             // 
             // btnConsultarLocales
             // 
@@ -56,6 +57,7 @@ namespace Clave5_Grupo4
             this.btnConsultarLocales.TabIndex = 16;
             this.btnConsultarLocales.Text = "Consultar Locales";
             this.btnConsultarLocales.UseVisualStyleBackColor = true;
+            this.btnConsultarLocales.Click += new System.EventHandler(this.btnConsultarLocales_Click_1);
             // 
             // btnEliminarLocal
             // 
@@ -65,6 +67,7 @@ namespace Clave5_Grupo4
             this.btnEliminarLocal.TabIndex = 15;
             this.btnEliminarLocal.Text = "Eliminar Local";
             this.btnEliminarLocal.UseVisualStyleBackColor = true;
+            this.btnEliminarLocal.Click += new System.EventHandler(this.btnEliminarLocal_Click_1);
             // 
             // btnModificarLocal
             // 
@@ -74,6 +77,7 @@ namespace Clave5_Grupo4
             this.btnModificarLocal.TabIndex = 14;
             this.btnModificarLocal.Text = "Modificar Local";
             this.btnModificarLocal.UseVisualStyleBackColor = true;
+            this.btnModificarLocal.Click += new System.EventHandler(this.btnModificarLocal_Click_1);
             // 
             // btnCrearLocal
             // 
@@ -83,6 +87,7 @@ namespace Clave5_Grupo4
             this.btnCrearLocal.TabIndex = 13;
             this.btnCrearLocal.Text = "Agregar Local";
             this.btnCrearLocal.UseVisualStyleBackColor = true;
+            this.btnCrearLocal.Click += new System.EventHandler(this.btnCrearLocal_Click_1);
             // 
             // txtUbicacionLocal
             // 
