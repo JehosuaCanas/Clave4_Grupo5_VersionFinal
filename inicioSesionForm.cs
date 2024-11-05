@@ -1,9 +1,9 @@
 ﻿
-
 using System;
 using System.Windows.Forms;
 
-namespace  Clave5_Grupo4
+
+namespace Clave5_Grupo4
 {
     public partial class InicioSesioForm : Form
     {
