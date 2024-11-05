@@ -16,7 +16,7 @@ namespace Clave5_Grupo4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new inicioSesionForm());
+            Application.Run(new InicioSesioForm());
         }
     }
 }
