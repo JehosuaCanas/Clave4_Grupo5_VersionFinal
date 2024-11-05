@@ -42,7 +42,7 @@ namespace Clave5_Grupo4
             // 
             // btnCrearEventosEspecial
             // 
-            this.btnCrearEventosEspecial.Location = new System.Drawing.Point(204, 245);
+            this.btnCrearEventosEspecial.Location = new System.Drawing.Point(187, 254);
             this.btnCrearEventosEspecial.Name = "btnCrearEventosEspecial";
             this.btnCrearEventosEspecial.Size = new System.Drawing.Size(114, 23);
             this.btnCrearEventosEspecial.TabIndex = 17;
@@ -52,7 +52,7 @@ namespace Clave5_Grupo4
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 188);
+            this.label4.Location = new System.Drawing.Point(76, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 16;
@@ -60,28 +60,28 @@ namespace Clave5_Grupo4
             // 
             // txtPedidoId
             // 
-            this.txtPedidoId.Location = new System.Drawing.Point(234, 188);
+            this.txtPedidoId.Location = new System.Drawing.Point(217, 197);
             this.txtPedidoId.Name = "txtPedidoId";
             this.txtPedidoId.Size = new System.Drawing.Size(100, 20);
             this.txtPedidoId.TabIndex = 15;
             // 
             // txtMontoMaximo
             // 
-            this.txtMontoMaximo.Location = new System.Drawing.Point(234, 145);
+            this.txtMontoMaximo.Location = new System.Drawing.Point(217, 154);
             this.txtMontoMaximo.Name = "txtMontoMaximo";
             this.txtMontoMaximo.Size = new System.Drawing.Size(100, 20);
             this.txtMontoMaximo.TabIndex = 14;
             // 
             // txtMontoMinimo
             // 
-            this.txtMontoMinimo.Location = new System.Drawing.Point(234, 102);
+            this.txtMontoMinimo.Location = new System.Drawing.Point(217, 111);
             this.txtMontoMinimo.Name = "txtMontoMinimo";
             this.txtMontoMinimo.Size = new System.Drawing.Size(100, 20);
             this.txtMontoMinimo.TabIndex = 13;
             // 
             // txtNombreEvento
             // 
-            this.txtNombreEvento.Location = new System.Drawing.Point(234, 58);
+            this.txtNombreEvento.Location = new System.Drawing.Point(217, 67);
             this.txtNombreEvento.Name = "txtNombreEvento";
             this.txtNombreEvento.Size = new System.Drawing.Size(100, 20);
             this.txtNombreEvento.TabIndex = 12;
@@ -89,7 +89,7 @@ namespace Clave5_Grupo4
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 145);
+            this.label3.Location = new System.Drawing.Point(76, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 11;
@@ -98,7 +98,7 @@ namespace Clave5_Grupo4
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 102);
+            this.label2.Location = new System.Drawing.Point(76, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 10;
@@ -107,13 +107,13 @@ namespace Clave5_Grupo4
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 58);
+            this.label1.Location = new System.Drawing.Point(76, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Nombre del Evento";
             // 
-            // EventosEspeciales
+            // EventosEspecialesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +127,7 @@ namespace Clave5_Grupo4
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "EventosEspeciales";
+            this.Name = "EventosEspecialesForm";
             this.Text = "EventosEspeciales";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -5,7 +5,7 @@ namespace Clave5_Grupo4
 {
     public partial class EventosEspecialesForm : Form
     {
-        private readonly EventosEspecialesForm eventosEspeciales; // Instancia de la clase EventosEspeciales
+        private readonly EventosEspeciales eventosEspeciales; // Instancia de la clase EventosEspeciales
         public EventosEspecialesForm()
         {
             InitializeComponent();
@@ -35,6 +35,7 @@ namespace Clave5_Grupo4
             }
 
             LimpiarFormulario();
+
         }
 
         private void LimpiarFormulario()
