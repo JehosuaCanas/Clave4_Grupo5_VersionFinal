@@ -19,6 +19,7 @@
 //    }
 //}
 
+
 using Clave5_Grupo4;
 using System;
 using System.Collections.Generic;
@@ -35,14 +36,15 @@ namespace Clave4_Grupo5
     public partial class UsuarioForm : Form
     {
         private Conexion db; // Instancia de la clase Conexion
-        private UsuarioService usuarioService; // Servicio para la gestión de usuarios
+        private Usuario Usuario; // Servicio para la gestión de usuarios
         private int usuarioIdSeleccionado = -1;
 
         public UsuarioForm()
         {
             InitializeComponent();
             db = new Conexion(); // Inicializa la conexión a la base de datos
-            usuarioService = new UsuarioService(db); // Inicializa el servicio de usuarios
+            Usuario = new Usuario(db.Connection); // Pasa la propiedad Connection en lugar de db
+                                                  // Inicializa el servicio de usuarios
 
             cmbTipo.Items.AddRange(new string[] { "estudiante", "docente", "administrativo" }); // Opciones del ComboBox
             lstUsuarios.SelectedIndexChanged += lstUsuarios_SelectedIndexChanged; // Evento para cambiar la selección del ListBox
@@ -61,7 +63,8 @@ namespace Clave4_Grupo5
                 return;
             }
 
-            usuarioService.CrearUsuario(nombre, tipo, email, contrasena);
+            Usuario.CrearUsuario(nombre, tipo, email, contrasena);
+            MessageBox.Show("Usuario Creado");
             LimpiarCampos();
             CargarUsuarios(); // Actualiza la lista de usuarios
         }
@@ -73,13 +76,15 @@ namespace Clave4_Grupo5
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
+            txtContraseña.Visible = false;
+            label4.Visible = false;
             if (usuarioIdSeleccionado != -1 && cmbTipo.SelectedItem != null)
             {
                 string nombre = txtNombre.Text;
                 string tipo = cmbTipo.SelectedItem.ToString();
                 string email = txtEmail.Text;
 
-                usuarioService.ModificarUsuario(usuarioIdSeleccionado, nombre, tipo, email);
+                Usuario.ModificarUsuario(usuarioIdSeleccionado, nombre, tipo, email);
                 MessageBox.Show("Usuario modificado exitosamente.");
                 LimpiarCampos();
                 CargarUsuarios(); // Actualiza la lista de usuarios
@@ -94,7 +99,7 @@ namespace Clave4_Grupo5
         {
             if (usuarioIdSeleccionado != -1)
             {
-                usuarioService.EliminarUsuario(usuarioIdSeleccionado);
+                Usuario.EliminarUsuario(usuarioIdSeleccionado);
                 MessageBox.Show("Usuario eliminado exitosamente.");
                 LimpiarCampos();
                 CargarUsuarios(); // Actualiza la lista de usuarios
@@ -107,7 +112,7 @@ namespace Clave4_Grupo5
 
         private void CargarUsuarios()
         {
-            var usuarios = usuarioService.ObtenerUsuarios();
+            var usuarios = Usuario.ObtenerUsuarios();
             lstUsuarios.Items.Clear();
 
             foreach (var usuario in usuarios)
@@ -197,6 +202,11 @@ namespace Clave4_Grupo5
             EventosEspecialesForm eventosForm = new EventosEspecialesForm();
             eventosForm.Show();
             this.Close();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

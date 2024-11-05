@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using System;
 using System.Windows.Forms;
 
-namespace Clave5_Grupo4
+namespace  Clave5_Grupo4
 {
-    public partial class inicioSesionForm : Form
+    public partial class InicioSesioForm : Form
     {
         // Variable privada para poder tener acceso a los metodos de la base de datos 
         private Conexion db;
-        private UsuarioService usuarioService;
+        private Usuario Usuario;
 
-        public inicioSesionForm()
+        public InicioSesioForm()
         {
             InitializeComponent();
             // Se inicializa la variable db
             db = new Conexion();
-            usuarioService = new UsuarioService(db); // Pasamos la instancia de Database directamente
+            Usuario = new Usuario(db.Connection); // Pasamos la instancia de Database directamente
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void InicioSesioForm_Load(object sender, EventArgs e)
         {
-
+            // Puedes agregar código aquí si es necesario al cargar el formulario
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -42,7 +37,7 @@ namespace Clave5_Grupo4
             }
 
             // Llama el método ValidarUsuario desde el servicio de usuario
-            var usuario = usuarioService.ValidarUsuario(email, contrasena);
+            var usuario = Usuario.ValidarUsuario(email, contrasena);
 
             if (usuario != null)
             {

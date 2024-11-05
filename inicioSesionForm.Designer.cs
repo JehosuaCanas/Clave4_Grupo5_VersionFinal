@@ -1,7 +1,7 @@
 ﻿
 namespace Clave5_Grupo4
 {
-    partial class inicioSesionForm
+    partial class InicioSesioForm
     {
         /// <summary>
         /// Required designer variable.
@@ -95,15 +95,14 @@ namespace Clave5_Grupo4
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
             // 
-            // inicioSesionForm
+            // InicioSesioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 450);
             this.Controls.Add(this.groupBox1);
-            this.Name = "inicioSesionForm";
+            this.Name = "InicioSesioForm";
             this.Text = "Inicio Sesion";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

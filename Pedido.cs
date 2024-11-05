@@ -1,14 +1,16 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Clave5_Grupo4
 {
-    class Pedido
+    // Modelo de Pedido con métodos de gestión
+    public class Pedido
     {
-        // Modelo de Pedido
         public int Id { get; set; }
         public string UsuarioNombre { get; set; }
         public string CafetinNombre { get; set; }
@@ -16,26 +18,16 @@ namespace Clave5_Grupo4
         public string MetodoPago { get; set; }
         public DateTime FechaHora { get; set; }
         public List<ProductoPedido> Productos { get; set; } = new List<ProductoPedido>();
-    }
 
-    // Modelo para Producto en un Pedido
-    public class ProductoPedido
-    {
-        public string Nombre { get; set; }
-        public int Cantidad { get; set; }
-    }
-
-    // Servicio para la gestión de pedidos
-    public class PedidoService
-    {
         private readonly MySqlConnection connection;
 
-
-        public PedidoService(Conexion db)
+        // Constructor que recibe la conexión
+        public Pedido(MySqlConnection connection)
         {
-            this.connection = db.Connection;
+            this.connection = connection;
         }
 
+        // Método para crear un nuevo pedido
         public int CrearPedido(int usuarioId, int cafetinId, decimal total, string metodoPago)
         {
             try
@@ -64,11 +56,7 @@ namespace Clave5_Grupo4
             }
         }
 
-
-
-
-
-
+        // Método para agregar un producto a un pedido
         public bool AgregarProductoAPedido(int pedidoId, int productoId, int cantidad)
         {
             try
@@ -90,13 +78,12 @@ namespace Clave5_Grupo4
             }
             catch (Exception ex)
             {
-                // Manejo de excepciones, puedes registrar el error o mostrar un mensaje
                 MessageBox.Show("Error al agregar el producto al pedido: " + ex.Message);
                 return false; // Indica que ocurrió un error
             }
         }
 
-
+        // Método para obtener pedidos con productos
         public List<Pedido> ObtenerPedidosConProductos()
         {
             if (connection.State != System.Data.ConnectionState.Open)
@@ -106,14 +93,14 @@ namespace Clave5_Grupo4
 
             List<Pedido> pedidos = new List<Pedido>();
             string query = @"
-    SELECT p.id, u.nombre AS UsuarioNombre, l.nombre AS CafetinNombre, 
-           p.total, p.metodo_pago AS MetodoPago, p.fecha_hora AS FechaHora,
-           pp.producto_id, pp.cantidad, pr.nombre AS ProductoNombre
-    FROM pedidos p
-    JOIN usuarios u ON p.usuario_id = u.id
-    JOIN locales l ON p.cafetin_id = l.id
-    LEFT JOIN pedidos_productos pp ON p.id = pp.pedido_id
-    LEFT JOIN productos pr ON pp.producto_id = pr.id";
+                SELECT p.id, u.nombre AS UsuarioNombre, l.nombre AS CafetinNombre, 
+                       p.total, p.metodo_pago AS MetodoPago, p.fecha_hora AS FechaHora,
+                       pp.producto_id, pp.cantidad, pr.nombre AS ProductoNombre
+                FROM pedidos p
+                JOIN usuarios u ON p.usuario_id = u.id
+                JOIN locales l ON p.cafetin_id = l.id
+                LEFT JOIN pedidos_productos pp ON p.id = pp.pedido_id
+                LEFT JOIN productos pr ON pp.producto_id = pr.id";
 
             using (var cmd = new MySqlCommand(query, connection))
             using (var reader = cmd.ExecuteReader())
@@ -126,7 +113,7 @@ namespace Clave5_Grupo4
                     Pedido pedido = pedidos.FirstOrDefault(p => p.Id == pedidoId);
                     if (pedido == null)
                     {
-                        pedido = new Pedido
+                        pedido = new Pedido(connection)
                         {
                             Id = pedidoId,
                             UsuarioNombre = reader.GetString("UsuarioNombre"),
@@ -154,9 +141,7 @@ namespace Clave5_Grupo4
             return pedidos;
         }
 
-
-
-
+        // Método para eliminar un pedido
         public void EliminarPedido(int id)
         {
             string query = "DELETE FROM pedidos WHERE id = @id";
@@ -166,6 +151,13 @@ namespace Clave5_Grupo4
                 cmd.ExecuteNonQuery();
             }
         }
+    }
+
+    // Modelo para Producto en un Pedido
+    public class ProductoPedido
+    {
+        public string Nombre { get; set; }
+        public int Cantidad { get; set; }
     }
 }
 

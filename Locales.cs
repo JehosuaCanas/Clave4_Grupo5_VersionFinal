@@ -5,32 +5,22 @@ using System.Collections.Generic;
 
 namespace Clave5_Grupo4
 {
-    // Modelo de Local
+    // Modelo de Local con métodos de gestión
     public class Local
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Ubicacion { get; set; }
 
-        public override string ToString()
-        {
-            return Nombre;
-        }
-    }
-
-    // Servicio para la gestión de locales
-    public class LocalService
-    {
         private readonly MySqlConnection connection;
 
-        public LocalService(Conexion db)
+        // Constructor que recibe la conexión
+        public Local(MySqlConnection connection)
         {
-            this.connection = db.Connection;
+            this.connection = connection;
         }
 
-
-
-
+        // Método para crear un nuevo local
         public void CrearLocal(string nombre, string ubicacion)
         {
             string query = "INSERT INTO locales (nombre, ubicacion) VALUES (@nombre, @ubicacion)";
@@ -42,6 +32,7 @@ namespace Clave5_Grupo4
             }
         }
 
+        // Método para obtener todos los locales
         public List<Local> ObtenerLocales()
         {
             List<Local> locales = new List<Local>();
@@ -51,7 +42,7 @@ namespace Clave5_Grupo4
             {
                 while (reader.Read())
                 {
-                    locales.Add(new Local
+                    locales.Add(new Local(connection)
                     {
                         Id = Convert.ToInt32(reader["id"]),
                         Nombre = reader["nombre"].ToString(),
@@ -62,6 +53,7 @@ namespace Clave5_Grupo4
             return locales;
         }
 
+        // Método para obtener locales solo con id y nombre
         public List<Local> ObtenerLocalesConId()
         {
             List<Local> locales = new List<Local>();
@@ -71,7 +63,7 @@ namespace Clave5_Grupo4
             {
                 while (reader.Read())
                 {
-                    locales.Add(new Local
+                    locales.Add(new Local(connection)
                     {
                         Id = Convert.ToInt32(reader["id"]),
                         Nombre = reader["nombre"].ToString()
@@ -81,6 +73,7 @@ namespace Clave5_Grupo4
             return locales;
         }
 
+        // Método para modificar un local
         public void ModificarLocal(int id, string nombre, string ubicacion)
         {
             string query = "UPDATE locales SET nombre = @nombre, ubicacion = @ubicacion WHERE id = @id";
@@ -93,6 +86,7 @@ namespace Clave5_Grupo4
             }
         }
 
+        // Método para eliminar un local
         public void EliminarLocal(int id)
         {
             string query = "DELETE FROM locales WHERE id = @id";
@@ -101,6 +95,11 @@ namespace Clave5_Grupo4
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public override string ToString()
+        {
+            return Nombre;
         }
     }
 }

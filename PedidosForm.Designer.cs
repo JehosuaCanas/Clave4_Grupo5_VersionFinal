@@ -1,4 +1,4 @@
-﻿namespace Clave5_Grupo4
+﻿namespace Clave4_Grupo5
 {
     partial class PedidosForm
     {
@@ -66,7 +66,7 @@
             this.Column4,
             this.Column5,
             this.Productos});
-            this.dgvPedidos.Location = new System.Drawing.Point(57, 291);
+            this.dgvPedidos.Location = new System.Drawing.Point(51, 289);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.Size = new System.Drawing.Size(759, 167);
@@ -118,14 +118,14 @@
             // 
             // txtCantidadProducto
             // 
-            this.txtCantidadProducto.Location = new System.Drawing.Point(388, 101);
+            this.txtCantidadProducto.Location = new System.Drawing.Point(382, 99);
             this.txtCantidadProducto.Name = "txtCantidadProducto";
             this.txtCantidadProducto.Size = new System.Drawing.Size(100, 20);
             this.txtCantidadProducto.TabIndex = 31;
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(388, 55);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(382, 53);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(168, 23);
             this.btnAgregarProducto.TabIndex = 30;
@@ -135,7 +135,7 @@
             // comboBoxProductos
             // 
             this.comboBoxProductos.FormattingEnabled = true;
-            this.comboBoxProductos.Location = new System.Drawing.Point(435, 16);
+            this.comboBoxProductos.Location = new System.Drawing.Point(429, 14);
             this.comboBoxProductos.Name = "comboBoxProductos";
             this.comboBoxProductos.Size = new System.Drawing.Size(121, 21);
             this.comboBoxProductos.TabIndex = 29;
@@ -143,7 +143,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(373, 19);
+            this.label1.Location = new System.Drawing.Point(367, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 28;
@@ -152,7 +152,7 @@
             // comboBoxUsuarios
             // 
             this.comboBoxUsuarios.FormattingEnabled = true;
-            this.comboBoxUsuarios.Location = new System.Drawing.Point(223, 16);
+            this.comboBoxUsuarios.Location = new System.Drawing.Point(217, 14);
             this.comboBoxUsuarios.Name = "comboBoxUsuarios";
             this.comboBoxUsuarios.Size = new System.Drawing.Size(121, 21);
             this.comboBoxUsuarios.TabIndex = 27;
@@ -160,14 +160,14 @@
             // comboBoxCafetines
             // 
             this.comboBoxCafetines.FormattingEnabled = true;
-            this.comboBoxCafetines.Location = new System.Drawing.Point(223, 58);
+            this.comboBoxCafetines.Location = new System.Drawing.Point(217, 56);
             this.comboBoxCafetines.Name = "comboBoxCafetines";
             this.comboBoxCafetines.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCafetines.TabIndex = 26;
             // 
             // btnConsultarPedido
             // 
-            this.btnConsultarPedido.Location = new System.Drawing.Point(198, 200);
+            this.btnConsultarPedido.Location = new System.Drawing.Point(192, 198);
             this.btnConsultarPedido.Name = "btnConsultarPedido";
             this.btnConsultarPedido.Size = new System.Drawing.Size(110, 23);
             this.btnConsultarPedido.TabIndex = 25;
@@ -176,7 +176,7 @@
             // 
             // btnCrearPedido
             // 
-            this.btnCrearPedido.Location = new System.Drawing.Point(96, 200);
+            this.btnCrearPedido.Location = new System.Drawing.Point(90, 198);
             this.btnCrearPedido.Name = "btnCrearPedido";
             this.btnCrearPedido.Size = new System.Drawing.Size(93, 23);
             this.btnCrearPedido.TabIndex = 24;
@@ -186,7 +186,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(118, 150);
+            this.label4.Location = new System.Drawing.Point(112, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 23;
@@ -195,7 +195,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(118, 101);
+            this.label3.Location = new System.Drawing.Point(112, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 22;
@@ -204,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(118, 58);
+            this.label2.Location = new System.Drawing.Point(112, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 21;
@@ -213,7 +213,7 @@
             // Usuario
             // 
             this.Usuario.AutoSize = true;
-            this.Usuario.Location = new System.Drawing.Point(118, 19);
+            this.Usuario.Location = new System.Drawing.Point(112, 17);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(70, 13);
             this.Usuario.TabIndex = 20;
@@ -226,14 +226,14 @@
             "Efectivo",
             "Tarjeta",
             "Bitcoin"});
-            this.cmbMetodoPago.Location = new System.Drawing.Point(223, 142);
+            this.cmbMetodoPago.Location = new System.Drawing.Point(217, 140);
             this.cmbMetodoPago.Name = "cmbMetodoPago";
             this.cmbMetodoPago.Size = new System.Drawing.Size(121, 21);
             this.cmbMetodoPago.TabIndex = 19;
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(223, 101);
+            this.txtTotal.Location = new System.Drawing.Point(217, 99);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(121, 20);
             this.txtTotal.TabIndex = 18;
