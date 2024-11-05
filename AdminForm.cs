@@ -16,5 +16,11 @@ namespace Clave5_Grupo4
         {
             InitializeComponent();
         }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PedidosForm pedidosForm = new PedidosForm();
+            pedidosForm.Show();
+        }
     }
 }
