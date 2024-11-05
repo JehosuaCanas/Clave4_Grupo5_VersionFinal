@@ -12,22 +12,22 @@ namespace Clave5_Grupo4
 {
     public partial class LocalesForm : Form
     {
-        private LocalService localService;
+
+        private Local Local;
         private Conexion db;
         private int localIdSeleccionado = -1;
-
         public LocalesForm()
         {
 
             InitializeComponent();
             db = new Conexion(); // Crea una nueva instancia de Conexion
-            localService = new LocalService(db); // Pasa la conexión a LocalService
+            Local = new Local(db.Connection); // Pasa la conexión a LocalService
             lstLocales.SelectedIndexChanged += lstLocales_SelectedIndexChanged;
         }
 
         private void btnCrearLocal_Click(object sender, EventArgs e)
         {
-            localService.CrearLocal(txtNombreLocal.Text, txtUbicacionLocal.Text);
+            Local.CrearLocal(txtNombreLocal.Text, txtUbicacionLocal.Text);
             MessageBox.Show("Local creado exitosamente");
             LimpiarCampos();
         }
@@ -35,7 +35,7 @@ namespace Clave5_Grupo4
 
         private void btnConsultarLocales_Click(object sender, EventArgs e)
         {
-            var locales = localService.ObtenerLocales();
+            var locales = Local.ObtenerLocales();
             lstLocales.Items.Clear();
             foreach (var local in locales)
             {
@@ -47,7 +47,7 @@ namespace Clave5_Grupo4
         {
             if (localIdSeleccionado != -1 && ValidarCamposLocal())
             {
-                localService.ModificarLocal(localIdSeleccionado, txtNombreLocal.Text, txtUbicacionLocal.Text);
+                Local.ModificarLocal(localIdSeleccionado, txtNombreLocal.Text, txtUbicacionLocal.Text);
                 MessageBox.Show("Local modificado exitosamente");
                 btnConsultarLocales_Click(null, null);
                 LimpiarCampos();
@@ -62,7 +62,7 @@ namespace Clave5_Grupo4
         {
             if (localIdSeleccionado != -1)
             {
-                localService.EliminarLocal(localIdSeleccionado);
+                Local.EliminarLocal(localIdSeleccionado);
                 MessageBox.Show("Local eliminado exitosamente");
                 btnConsultarLocales_Click(null, null);
                 LimpiarCampos();
@@ -110,6 +110,7 @@ namespace Clave5_Grupo4
                     MessageBox.Show("El formato del local seleccionado es incorrecto.");
                 }
             }
+
         }
 
         private void LimpiarCampos()

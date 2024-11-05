@@ -43,14 +43,14 @@ namespace Clave5_Grupo4
             // lstLocales
             // 
             this.lstLocales.FormattingEnabled = true;
-            this.lstLocales.Location = new System.Drawing.Point(78, 205);
+            this.lstLocales.Location = new System.Drawing.Point(102, 220);
             this.lstLocales.Name = "lstLocales";
             this.lstLocales.Size = new System.Drawing.Size(443, 160);
             this.lstLocales.TabIndex = 17;
             // 
             // btnConsultarLocales
             // 
-            this.btnConsultarLocales.Location = new System.Drawing.Point(429, 151);
+            this.btnConsultarLocales.Location = new System.Drawing.Point(453, 166);
             this.btnConsultarLocales.Name = "btnConsultarLocales";
             this.btnConsultarLocales.Size = new System.Drawing.Size(106, 23);
             this.btnConsultarLocales.TabIndex = 16;
@@ -59,7 +59,7 @@ namespace Clave5_Grupo4
             // 
             // btnEliminarLocal
             // 
-            this.btnEliminarLocal.Location = new System.Drawing.Point(311, 151);
+            this.btnEliminarLocal.Location = new System.Drawing.Point(335, 166);
             this.btnEliminarLocal.Name = "btnEliminarLocal";
             this.btnEliminarLocal.Size = new System.Drawing.Size(93, 23);
             this.btnEliminarLocal.TabIndex = 15;
@@ -68,7 +68,7 @@ namespace Clave5_Grupo4
             // 
             // btnModificarLocal
             // 
-            this.btnModificarLocal.Location = new System.Drawing.Point(200, 151);
+            this.btnModificarLocal.Location = new System.Drawing.Point(224, 166);
             this.btnModificarLocal.Name = "btnModificarLocal";
             this.btnModificarLocal.Size = new System.Drawing.Size(105, 23);
             this.btnModificarLocal.TabIndex = 14;
@@ -77,7 +77,7 @@ namespace Clave5_Grupo4
             // 
             // btnCrearLocal
             // 
-            this.btnCrearLocal.Location = new System.Drawing.Point(78, 151);
+            this.btnCrearLocal.Location = new System.Drawing.Point(102, 166);
             this.btnCrearLocal.Name = "btnCrearLocal";
             this.btnCrearLocal.Size = new System.Drawing.Size(102, 23);
             this.btnCrearLocal.TabIndex = 13;
@@ -86,14 +86,14 @@ namespace Clave5_Grupo4
             // 
             // txtUbicacionLocal
             // 
-            this.txtUbicacionLocal.Location = new System.Drawing.Point(217, 84);
+            this.txtUbicacionLocal.Location = new System.Drawing.Point(241, 99);
             this.txtUbicacionLocal.Name = "txtUbicacionLocal";
             this.txtUbicacionLocal.Size = new System.Drawing.Size(100, 20);
             this.txtUbicacionLocal.TabIndex = 12;
             // 
             // txtNombreLocal
             // 
-            this.txtNombreLocal.Location = new System.Drawing.Point(217, 42);
+            this.txtNombreLocal.Location = new System.Drawing.Point(241, 57);
             this.txtNombreLocal.Name = "txtNombreLocal";
             this.txtNombreLocal.Size = new System.Drawing.Size(100, 20);
             this.txtNombreLocal.TabIndex = 11;
@@ -101,7 +101,7 @@ namespace Clave5_Grupo4
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 91);
+            this.label2.Location = new System.Drawing.Point(131, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 10;
@@ -110,7 +110,7 @@ namespace Clave5_Grupo4
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 49);
+            this.label1.Location = new System.Drawing.Point(131, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 9;
