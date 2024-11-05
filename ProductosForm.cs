@@ -21,7 +21,7 @@ namespace Clave5_Grupo4
 
 
             cmbTipoProducto.Items.AddRange(new string[] { "comida", "bebida", "antojo" });
-            lstProductos.SelectedIndexChanged += lstProductos_SelectedIndexChanged;
+            lstProductos.SelectedIndexChanged += lstProductos_SelectedIndexChanged_1;
             CargarLocalesEnComboBox();
         }
 
@@ -38,7 +38,7 @@ namespace Clave5_Grupo4
             return TimeSpan.TryParse(horario, out _) || TimeSpan.TryParseExact(horario, "hh\\:mm", null, out _);
         }
 
-        private void btnCrearProducto_Click(object sender, EventArgs e)
+        private void btnCrearProducto_Click_2(object sender, EventArgs e)
         {
             if (!EsHorarioValido(txtHorarioProducto.Text))
             {
@@ -57,10 +57,9 @@ namespace Clave5_Grupo4
 
             MessageBox.Show("Producto creado exitosamente");
             LimpiarCampos();
-
         }
 
-        private void btnConsultarProductos_Click(object sender, EventArgs e)
+        private void btnConsultarProductos_Click_1(object sender, EventArgs e)
         {
             var productos = Producto.ObtenerProductos((int)cmbLocales.SelectedValue);
             lstProductos.Items.Clear();
@@ -68,10 +67,9 @@ namespace Clave5_Grupo4
             {
                 lstProductos.Items.Add(producto);
             }
-
         }
 
-        private void btnModificarProducto_Click(object sender, EventArgs e)
+        private void btnModificarProducto_Click_1(object sender, EventArgs e)
         {
             if (productoIdSeleccionado != -1 && ValidarCamposProducto())
             {
@@ -102,7 +100,7 @@ namespace Clave5_Grupo4
                     );
 
                     MessageBox.Show("Producto modificado exitosamente");
-                    btnConsultarProductos_Click(null, null);
+                    btnConsultarProductos_Click_1(null, null);
                 }
                 catch (FormatException ex)
                 {
@@ -115,20 +113,18 @@ namespace Clave5_Grupo4
             }
 
             LimpiarCampos();
-
         }
 
 
-        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        private void btnEliminarProducto_Click_1(object sender, EventArgs e)
         {
             int productoId = ObtenerIdSeleccionado();
             if (productoId != -1)
             {
                 Producto.EliminarProducto(productoId);
                 MessageBox.Show("Producto eliminado exitosamente");
-                btnConsultarProductos_Click(null, null);
+                btnConsultarProductos_Click_1(null, null);
             }
-
         }
 
         private int ObtenerIdSeleccionado()
@@ -141,7 +137,7 @@ namespace Clave5_Grupo4
             return -1;
         }
 
-        private void lstProductos_SelectedIndexChanged(object sender, EventArgs e)
+        private void lstProductos_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (lstProductos.SelectedItem != null)
             {
@@ -172,7 +168,6 @@ namespace Clave5_Grupo4
                     MessageBox.Show("El formato del producto seleccionado es incorrecto.");
                 }
             }
-
         }
 
         private void LimpiarCampos()
@@ -202,11 +197,6 @@ namespace Clave5_Grupo4
             }
 
             return true;
-        }
-
-        private void btnCrearProducto_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

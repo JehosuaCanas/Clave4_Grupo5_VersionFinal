@@ -70,6 +70,7 @@ namespace Clave5_Grupo4
             this.lstProductos.Name = "lstProductos";
             this.lstProductos.Size = new System.Drawing.Size(360, 95);
             this.lstProductos.TabIndex = 28;
+            this.lstProductos.SelectedIndexChanged += new System.EventHandler(this.lstProductos_SelectedIndexChanged_1);
             // 
             // btnConsultarProductos
             // 
@@ -79,6 +80,7 @@ namespace Clave5_Grupo4
             this.btnConsultarProductos.TabIndex = 27;
             this.btnConsultarProductos.Text = "Consultar Productos";
             this.btnConsultarProductos.UseVisualStyleBackColor = true;
+            this.btnConsultarProductos.Click += new System.EventHandler(this.btnConsultarProductos_Click_1);
             // 
             // btnEliminarProducto
             // 
@@ -88,6 +90,7 @@ namespace Clave5_Grupo4
             this.btnEliminarProducto.TabIndex = 26;
             this.btnEliminarProducto.Text = "Eliminar Producto";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click_1);
             // 
             // btnModificarProducto
             // 
@@ -97,6 +100,7 @@ namespace Clave5_Grupo4
             this.btnModificarProducto.TabIndex = 25;
             this.btnModificarProducto.Text = "Modificar Producto";
             this.btnModificarProducto.UseVisualStyleBackColor = true;
+            this.btnModificarProducto.Click += new System.EventHandler(this.btnModificarProducto_Click_1);
             // 
             // btnCrearProducto
             // 
@@ -106,6 +110,7 @@ namespace Clave5_Grupo4
             this.btnCrearProducto.TabIndex = 24;
             this.btnCrearProducto.Text = "Agregar Producto";
             this.btnCrearProducto.UseVisualStyleBackColor = true;
+            this.btnCrearProducto.Click += new System.EventHandler(this.btnCrearProducto_Click_2);
             // 
             // cmbTipoProducto
             // 
