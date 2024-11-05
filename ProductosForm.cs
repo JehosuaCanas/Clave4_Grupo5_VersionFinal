@@ -6,8 +6,8 @@ namespace Clave5_Grupo4
 {
     public partial class ProductosForm : Form
     {
-        private ProductoService productoService;
-        private LocalService localService;
+        private Producto Producto;
+        private Local Local;
         private int productoIdSeleccionado = -1;
         private Conexion db;
 
@@ -16,8 +16,8 @@ namespace Clave5_Grupo4
         {
             InitializeComponent();
             db = new Conexion();  // Crea una nueva instancia de Conexion
-            productoService = new ProductoService(db);
-            localService = new LocalService(db);
+            Producto = new Producto(db.Connection);
+            Local = new Local(db.Connection);
 
 
             cmbTipoProducto.Items.AddRange(new string[] { "comida", "bebida", "antojo" });
@@ -27,7 +27,7 @@ namespace Clave5_Grupo4
 
         private void CargarLocalesEnComboBox()
         {
-            var locales = localService.ObtenerLocalesConId(); // Utiliza LocalService para obtener los locales
+            var locales = Local.ObtenerLocalesConId(); // Utiliza LocalService para obtener los locales
             cmbLocales.DataSource = locales;
             cmbLocales.DisplayMember = "Nombre";
             cmbLocales.ValueMember = "Id";
@@ -47,7 +47,7 @@ namespace Clave5_Grupo4
             }
 
             int localId = (int)cmbLocales.SelectedValue;
-            productoService.CrearProducto(
+            Producto.CrearProducto(
                 txtNombreProducto.Text,
                 Convert.ToDecimal(txtPrecioProducto.Text),
                 cmbTipoProducto.SelectedItem.ToString(),
@@ -57,16 +57,18 @@ namespace Clave5_Grupo4
 
             MessageBox.Show("Producto creado exitosamente");
             LimpiarCampos();
+
         }
 
         private void btnConsultarProductos_Click(object sender, EventArgs e)
         {
-            var productos = productoService.ObtenerProductos((int)cmbLocales.SelectedValue);
+            var productos = Producto.ObtenerProductos((int)cmbLocales.SelectedValue);
             lstProductos.Items.Clear();
             foreach (var producto in productos)
             {
                 lstProductos.Items.Add(producto);
             }
+
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
@@ -90,7 +92,7 @@ namespace Clave5_Grupo4
                         }
                     }
 
-                    productoService.ModificarProducto(
+                    Producto.ModificarProducto(
                         productoIdSeleccionado,
                         txtNombreProducto.Text,
                         precioProducto,
@@ -113,6 +115,7 @@ namespace Clave5_Grupo4
             }
 
             LimpiarCampos();
+
         }
 
 
@@ -121,10 +124,11 @@ namespace Clave5_Grupo4
             int productoId = ObtenerIdSeleccionado();
             if (productoId != -1)
             {
-                productoService.EliminarProducto(productoId);
+                Producto.EliminarProducto(productoId);
                 MessageBox.Show("Producto eliminado exitosamente");
                 btnConsultarProductos_Click(null, null);
             }
+
         }
 
         private int ObtenerIdSeleccionado()
@@ -168,6 +172,7 @@ namespace Clave5_Grupo4
                     MessageBox.Show("El formato del producto seleccionado es incorrecto.");
                 }
             }
+
         }
 
         private void LimpiarCampos()

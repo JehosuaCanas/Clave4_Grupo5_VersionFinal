@@ -49,7 +49,7 @@ namespace Clave5_Grupo4
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(475, 91);
+            this.label5.Location = new System.Drawing.Point(480, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 30;
@@ -58,7 +58,7 @@ namespace Clave5_Grupo4
             // cmbLocales
             // 
             this.cmbLocales.FormattingEnabled = true;
-            this.cmbLocales.Location = new System.Drawing.Point(475, 112);
+            this.cmbLocales.Location = new System.Drawing.Point(480, 121);
             this.cmbLocales.Name = "cmbLocales";
             this.cmbLocales.Size = new System.Drawing.Size(121, 21);
             this.cmbLocales.TabIndex = 29;
@@ -66,14 +66,14 @@ namespace Clave5_Grupo4
             // lstProductos
             // 
             this.lstProductos.FormattingEnabled = true;
-            this.lstProductos.Location = new System.Drawing.Point(94, 272);
+            this.lstProductos.Location = new System.Drawing.Point(99, 281);
             this.lstProductos.Name = "lstProductos";
             this.lstProductos.Size = new System.Drawing.Size(360, 95);
             this.lstProductos.TabIndex = 28;
             // 
             // btnConsultarProductos
             // 
-            this.btnConsultarProductos.Location = new System.Drawing.Point(324, 225);
+            this.btnConsultarProductos.Location = new System.Drawing.Point(329, 234);
             this.btnConsultarProductos.Name = "btnConsultarProductos";
             this.btnConsultarProductos.Size = new System.Drawing.Size(119, 23);
             this.btnConsultarProductos.TabIndex = 27;
@@ -82,7 +82,7 @@ namespace Clave5_Grupo4
             // 
             // btnEliminarProducto
             // 
-            this.btnEliminarProducto.Location = new System.Drawing.Point(449, 225);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(454, 234);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(105, 23);
             this.btnEliminarProducto.TabIndex = 26;
@@ -91,7 +91,7 @@ namespace Clave5_Grupo4
             // 
             // btnModificarProducto
             // 
-            this.btnModificarProducto.Location = new System.Drawing.Point(192, 225);
+            this.btnModificarProducto.Location = new System.Drawing.Point(197, 234);
             this.btnModificarProducto.Name = "btnModificarProducto";
             this.btnModificarProducto.Size = new System.Drawing.Size(116, 23);
             this.btnModificarProducto.TabIndex = 25;
@@ -100,39 +100,38 @@ namespace Clave5_Grupo4
             // 
             // btnCrearProducto
             // 
-            this.btnCrearProducto.Location = new System.Drawing.Point(75, 225);
+            this.btnCrearProducto.Location = new System.Drawing.Point(80, 234);
             this.btnCrearProducto.Name = "btnCrearProducto";
             this.btnCrearProducto.Size = new System.Drawing.Size(102, 23);
             this.btnCrearProducto.TabIndex = 24;
             this.btnCrearProducto.Text = "Agregar Producto";
             this.btnCrearProducto.UseVisualStyleBackColor = true;
-            this.btnCrearProducto.Click += new System.EventHandler(this.btnCrearProducto_Click_1);
             // 
             // cmbTipoProducto
             // 
             this.cmbTipoProducto.FormattingEnabled = true;
-            this.cmbTipoProducto.Location = new System.Drawing.Point(252, 130);
+            this.cmbTipoProducto.Location = new System.Drawing.Point(257, 139);
             this.cmbTipoProducto.Name = "cmbTipoProducto";
             this.cmbTipoProducto.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoProducto.TabIndex = 23;
             // 
             // txtHorarioProducto
             // 
-            this.txtHorarioProducto.Location = new System.Drawing.Point(252, 168);
+            this.txtHorarioProducto.Location = new System.Drawing.Point(257, 177);
             this.txtHorarioProducto.Name = "txtHorarioProducto";
             this.txtHorarioProducto.Size = new System.Drawing.Size(121, 20);
             this.txtHorarioProducto.TabIndex = 22;
             // 
             // txtPrecioProducto
             // 
-            this.txtPrecioProducto.Location = new System.Drawing.Point(252, 92);
+            this.txtPrecioProducto.Location = new System.Drawing.Point(257, 101);
             this.txtPrecioProducto.Name = "txtPrecioProducto";
             this.txtPrecioProducto.Size = new System.Drawing.Size(121, 20);
             this.txtPrecioProducto.TabIndex = 21;
             // 
             // txtNombreProducto
             // 
-            this.txtNombreProducto.Location = new System.Drawing.Point(252, 59);
+            this.txtNombreProducto.Location = new System.Drawing.Point(257, 68);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(121, 20);
             this.txtNombreProducto.TabIndex = 20;
@@ -140,7 +139,7 @@ namespace Clave5_Grupo4
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(91, 168);
+            this.label4.Location = new System.Drawing.Point(96, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 19;
@@ -149,7 +148,7 @@ namespace Clave5_Grupo4
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 130);
+            this.label3.Location = new System.Drawing.Point(96, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 18;
@@ -158,7 +157,7 @@ namespace Clave5_Grupo4
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 92);
+            this.label2.Location = new System.Drawing.Point(96, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 17;
@@ -167,7 +166,7 @@ namespace Clave5_Grupo4
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 59);
+            this.label1.Location = new System.Drawing.Point(96, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 16;
