@@ -12,7 +12,8 @@ namespace Clave5_Grupo4
             var db = new Conexion(); // Crear la instancia de conexión
             eventosEspeciales = new EventosEspeciales(db); // Inicializar EventosEspeciales con la conexión
         }
-        private void btnCrearEventosEspecial_Click(object sender, EventArgs e)
+
+        private void btnCrearEventosEspecial_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -35,7 +36,6 @@ namespace Clave5_Grupo4
             }
 
             LimpiarFormulario();
-
         }
 
         private void LimpiarFormulario()

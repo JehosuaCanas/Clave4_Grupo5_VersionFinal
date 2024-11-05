@@ -48,6 +48,7 @@ namespace Clave5_Grupo4
             this.btnCrearEventosEspecial.TabIndex = 17;
             this.btnCrearEventosEspecial.Text = "Crear Evento";
             this.btnCrearEventosEspecial.UseVisualStyleBackColor = true;
+            this.btnCrearEventosEspecial.Click += new System.EventHandler(this.btnCrearEventosEspecial_Click_1);
             // 
             // label4
             // 
