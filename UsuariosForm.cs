@@ -54,8 +54,7 @@ namespace Clave5_Grupo4
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
-            txtContraseña.Visible = false;
-            label4.Visible = false;
+           
             if (usuarioIdSeleccionado != -1 && cmbTipo.SelectedItem != null)
             {
                 string nombre = txtNombre.Text;
