@@ -7,6 +7,11 @@ namespace Clave5_Grupo4
     {
         // Instancia de la clase EventosEspeciales que se encargará de la lógica del negocio
         private readonly EventosEspeciales eventosEspeciales; // Instancia de la clase EventosEspeciales
+
+        // Nombre del autor y la fecha actual
+        // Autor: Jaime Anthony Serrano Servellón
+        // Fecha: 10 de noviembre de 2024
+
         public EventosEspecialesForm()
         {
             InitializeComponent(); // Inicializa los componentes del formulario (controles, etc.)
