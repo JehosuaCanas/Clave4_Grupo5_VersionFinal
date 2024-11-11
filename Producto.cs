@@ -6,7 +6,10 @@ using System.Collections.Generic;
 
 namespace Clave5_Grupo4
 {
-    // Modelo y servicio para la gestión de productos
+
+    ////Jehosua Abdiel Cañas Tijerino
+    ////11/11/2024
+    // Clase Producto y sus atributos 
     public class Producto
     {
         public int Id { get; set; }
@@ -16,14 +19,22 @@ namespace Clave5_Grupo4
 
         private readonly MySqlConnection connection;
 
-        // Modificado: Constructor que recibe directamente la conexión
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        // Constructor que recibe directamente la conexión
         public Producto(MySqlConnection connection)
         {
             this.connection = connection;
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        //// Metodo para crear Producto
         public void CrearProducto(string nombre, decimal precio, string tipo, TimeSpan horario_disponible, int cafetinId)
         {
+            ////Jehosua Abdiel Cañas Tijerino
+            ////11/11/2024
+            //// Consulta SQL para insertar un nuevo producto 
             string query = "INSERT INTO productos (nombre, precio, tipo, horario_disponible, cafetin_id) VALUES (@nombre, @precio, @tipo, @horario_disponible, @cafetinId)";
             using (var cmd = new MySqlCommand(query, connection))
             {
@@ -36,6 +47,9 @@ namespace Clave5_Grupo4
             }
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        ////Metodo para obtener los productos de la base de datos 
         public List<string> ObtenerProductos(int cafetinId)
         {
             List<string> productos = new List<string>();
@@ -63,6 +77,9 @@ namespace Clave5_Grupo4
             return productos;
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        ////Metod para obtener una lista de productos segun un cafetin
         public List<Producto> ObtenerProductos2(int cafetinId)
         {
             List<Producto> productos = new List<Producto>();
@@ -91,6 +108,9 @@ namespace Clave5_Grupo4
             return productos;
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        /////Metodo para modificar los datos un producto segun su id
         public void ModificarProducto(int id, string nombre, decimal precio, string tipo, TimeSpan horario, int cafetinId)
         {
             string query = "UPDATE productos SET nombre = @nombre, precio = @precio, tipo = @tipo, horario_disponible = @horario, cafetin_id = @cafetinId WHERE id = @id";
@@ -106,6 +126,9 @@ namespace Clave5_Grupo4
             }
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        ////Metodo para eliminar un producto en la base de datos segun su id 
         public void EliminarProducto(int id)
         {
             string query = "DELETE FROM productos WHERE id = @id";
@@ -116,6 +139,9 @@ namespace Clave5_Grupo4
             }
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        ////Metodo para  obtener un producto específico por su id, devolviéndolo como un objeto Producto
         private Producto ObtenerProductoPorId(int id)
         {
             if (connection.State != System.Data.ConnectionState.Open)
@@ -144,35 +170,7 @@ namespace Clave5_Grupo4
             return null;
         }
 
-        public Producto ObtenerProductoPorNombre(string nombreProducto)
-        {
-            Producto producto = null;
-            if (connection.State != System.Data.ConnectionState.Open)
-            {
-                connection.Open();
-            }
-
-            string query = "SELECT Id, Nombre, Precio FROM productos WHERE Nombre = @nombre";
-            using (var cmd = new MySqlCommand(query, connection))
-            {
-                cmd.Parameters.AddWithValue("@nombre", nombreProducto);
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        producto = new Producto(connection) // Pasar la conexión a la nueva instancia
-                        {
-                            Id = reader.GetInt32("Id"),
-                            Nombre = reader.GetString("Nombre"),
-                            Precio = reader.GetDecimal("Precio")
-                        };
-                    }
-                }
-            }
-
-            return producto;
-        }
+       
 
         public bool ValidarRestriccionesAntojitos(List<int> productosIds)
         {

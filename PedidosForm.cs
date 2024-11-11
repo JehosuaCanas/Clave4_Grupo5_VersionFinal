@@ -65,6 +65,14 @@ namespace Clave5_Grupo4
             int cafetinId = ((Local)comboBoxCafetines.SelectedItem).Id;
             string metodoPago = cmbMetodoPago.SelectedItem.ToString();
 
+            // Validar restricciones de "Antojitos"
+            var productosIds = productosTemp.Select(p => p.Producto.Id).ToList();
+            if (!Producto.ValidarRestriccionesAntojitos(productosIds))
+            {
+                MessageBox.Show("El pedido no cumple con las restricciones para productos de tipo 'Antojito'. Solo puedes incluir hasta 3 antojitos y en el horario permitido (14:00 - 16:00).");
+                return;
+            }
+
             // Crear el pedido
             int pedidoId = Pedido.CrearPedido(usuarioId, cafetinId, total, metodoPago);
             if (pedidoId <= 0)

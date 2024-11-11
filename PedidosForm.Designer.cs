@@ -58,6 +58,7 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventosEspecialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,11 +67,13 @@
             // 
             this.txtTotal.Location = new System.Drawing.Point(209, 127);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(121, 20);
             this.txtTotal.TabIndex = 2;
             // 
             // cmbMetodoPago
             // 
+            this.cmbMetodoPago.Enabled = false;
             this.cmbMetodoPago.FormattingEnabled = true;
             this.cmbMetodoPago.Items.AddRange(new object[] {
             "Efectivo",
@@ -183,7 +186,7 @@
             // 
             // txtCantidadProducto
             // 
-            this.txtCantidadProducto.Location = new System.Drawing.Point(374, 127);
+            this.txtCantidadProducto.Location = new System.Drawing.Point(377, 139);
             this.txtCantidadProducto.Name = "txtCantidadProducto";
             this.txtCantidadProducto.Size = new System.Drawing.Size(100, 20);
             this.txtCantidadProducto.TabIndex = 16;
@@ -316,11 +319,21 @@
             this.eventosEspecialesToolStripMenuItem.Text = "Eventos Especiales";
             this.eventosEspecialesToolStripMenuItem.Click += new System.EventHandler(this.eventosEspecialesToolStripMenuItem_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(379, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Cantidad Producto ";
+            // 
             // PedidosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 622);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dgvPedidos);
             this.Controls.Add(this.txtCantidadProducto);
@@ -378,5 +391,6 @@
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventosEspecialesToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
     }
 }
