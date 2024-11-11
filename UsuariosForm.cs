@@ -44,12 +44,14 @@ namespace Clave5_Grupo4
             Usuario.CrearUsuario(nombre, tipo, email, contrasena);
             MessageBox.Show("Usuario Creado");
             LimpiarCampos();
-            CargarUsuarios(); // Actualiza la lista de usuarios
+     
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             CargarUsuarios(); // Carga todos los usuarios
+  
+
         }
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
@@ -70,6 +72,7 @@ namespace Clave5_Grupo4
             {
                 MessageBox.Show("Por favor, seleccione un usuario y un tipo de usuario.");
             }
+
         }
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
@@ -182,6 +185,8 @@ namespace Clave5_Grupo4
             this.Close();
 
         }
+
+      
     }
 
 

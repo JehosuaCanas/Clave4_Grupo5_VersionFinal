@@ -59,7 +59,6 @@
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
-           
             // 
             // label2
             // 
@@ -87,6 +86,7 @@
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contraseña";
+            
             // 
             // txtNombre
             // 
@@ -106,6 +106,7 @@
             // 
             this.txtContraseña.Location = new System.Drawing.Point(195, 163);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(197, 20);
             this.txtContraseña.TabIndex = 6;
             // 
@@ -116,7 +117,6 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(197, 21);
             this.cmbTipo.TabIndex = 7;
-        
             // 
             // btnCrearUsuario
             // 

@@ -62,6 +62,9 @@ namespace Clave5_Grupo4
             txtNombreEvento.Focus();
         }
 
+
+
+        ////Codigo del Menu
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm();
