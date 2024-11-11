@@ -270,6 +270,51 @@ namespace Clave5_Grupo4
 
             return true;
         }
+
+
+
+        ////Codigo del Menu
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Close();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuarioForm usuariosForm = new UsuarioForm();
+            usuariosForm.Show();
+            this.Close();
+        }
+
+        private void localesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LocalesForm localesForm = new LocalesForm();
+            localesForm.Show();
+            this.Close();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProductosForm productosForm = new ProductosForm();
+            productosForm.Show();
+            this.Close();
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PedidosForm pedidosForm = new PedidosForm();
+            pedidosForm.Show();
+            this.Close();
+        }
+
+        private void eventosEspecialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EventosEspecialesForm eventosForm = new EventosEspecialesForm();
+            eventosForm.Show();
+            this.Close();
+        }
     }
 }
 

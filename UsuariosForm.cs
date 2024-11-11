@@ -138,51 +138,48 @@ namespace Clave5_Grupo4
             usuarioIdSeleccionado = -1;
         }
 
-        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+        //// Codigo del Menu
 
-        private void btnConsultarUsuario_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void crearUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UsuarioForm usuariosForm = new UsuarioForm();
-            usuariosForm.Show();
-            this.Close();
-        }
-
-        private void localesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LocalesForm localesForm = new LocalesForm();
-            localesForm.Show();
-            this.Close();
-        }
-
-        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ProductosForm productosForm = new ProductosForm();
-            productosForm.Show();
-            this.Close();
-        }
-
-        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void eventosEspecialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PedidosForm pedidosForm = new PedidosForm();
             pedidosForm.Show();
             this.Close();
         }
 
-        private void eventosEspecialesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void crearUsuarioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            EventosEspecialesForm eventosForm = new EventosEspecialesForm();
-            eventosForm.Show();
+            MainForm mainForm= new MainForm();
+            mainForm.Show();
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            UsuarioForm usuariosForm = new UsuarioForm();
+            usuariosForm.Show();
+            this.Close();
+        }
+
+        private void LocalesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            LocalesForm localesForm = new LocalesForm();
+            localesForm.Show();
+            this.Close();
+        }
+
+        private void productosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ProductosForm productosForm = new ProductosForm();
+            productosForm.Show();
+            this.Close();
+        }
+
+        private void eventosEspecialesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EventosEspecialesForm eventosEspecialesForm = new EventosEspecialesForm();
+            eventosEspecialesForm.Show();
+            this.Close();
 
         }
     }

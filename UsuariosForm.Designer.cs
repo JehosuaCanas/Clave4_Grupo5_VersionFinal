@@ -42,11 +42,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lstUsuarios = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.crearUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LocalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventosEspecialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventosEspecialesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // label2
             // 
@@ -115,7 +116,7 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(197, 21);
             this.cmbTipo.TabIndex = 7;
-            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
+        
             // 
             // btnCrearUsuario
             // 
@@ -170,47 +171,59 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearUsuarioToolStripMenuItem,
-            this.localesToolStripMenuItem,
+            this.homeToolStripMenuItem,
+            this.usuarioToolStripMenuItem,
+            this.LocalesToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.pedidosToolStripMenuItem,
-            this.eventosEspecialesToolStripMenuItem});
+            this.eventosEspecialesToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // crearUsuarioToolStripMenuItem
+            // homeToolStripMenuItem
             // 
-            this.crearUsuarioToolStripMenuItem.Name = "crearUsuarioToolStripMenuItem";
-            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.crearUsuarioToolStripMenuItem.Text = "Crear Usuario";
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.crearUsuarioToolStripMenuItem_Click_1);
             // 
-            // localesToolStripMenuItem
+            // usuarioToolStripMenuItem
             // 
-            this.localesToolStripMenuItem.Name = "localesToolStripMenuItem";
-            this.localesToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.localesToolStripMenuItem.Text = "Locales";
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuarioToolStripMenuItem.Text = "Usuarios";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            // 
+            // LocalesToolStripMenuItem
+            // 
+            this.LocalesToolStripMenuItem.Name = "LocalesToolStripMenuItem";
+            this.LocalesToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.LocalesToolStripMenuItem.Text = "Locales";
+            this.LocalesToolStripMenuItem.Click += new System.EventHandler(this.LocalesToolStripMenuItem_Click_1);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click_1);
             // 
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.eventosEspecialesToolStripMenuItem_Click);
             // 
-            // eventosEspecialesToolStripMenuItem
+            // eventosEspecialesToolStripMenuItem1
             // 
-            this.eventosEspecialesToolStripMenuItem.Name = "eventosEspecialesToolStripMenuItem";
-            this.eventosEspecialesToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            this.eventosEspecialesToolStripMenuItem.Text = "Eventos Especiales";
-            this.eventosEspecialesToolStripMenuItem.Click += new System.EventHandler(this.eventosEspecialesToolStripMenuItem_Click);
+            this.eventosEspecialesToolStripMenuItem1.Name = "eventosEspecialesToolStripMenuItem1";
+            this.eventosEspecialesToolStripMenuItem1.Size = new System.Drawing.Size(116, 20);
+            this.eventosEspecialesToolStripMenuItem1.Text = "Eventos Especiales";
+            this.eventosEspecialesToolStripMenuItem1.Click += new System.EventHandler(this.eventosEspecialesToolStripMenuItem1_Click);
             // 
             // UsuarioForm
             // 
@@ -234,7 +247,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "UsuarioForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.btnConsultarUsuario_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -258,10 +270,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lstUsuarios;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem crearUsuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem localesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LocalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eventosEspecialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventosEspecialesToolStripMenuItem1;
     }
 }
