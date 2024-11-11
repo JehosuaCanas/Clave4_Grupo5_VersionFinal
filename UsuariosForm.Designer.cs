@@ -86,7 +86,6 @@
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contraseña";
-            
             // 
             // txtNombre
             // 
@@ -246,7 +245,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "UsuarioForm";
-            this.Text = "Form1";
+            this.Text = "Usuario";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

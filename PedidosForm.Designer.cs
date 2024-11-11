@@ -170,7 +170,7 @@
             this.comboBoxProductos.FormattingEnabled = true;
             this.comboBoxProductos.Location = new System.Drawing.Point(421, 42);
             this.comboBoxProductos.Name = "comboBoxProductos";
-            this.comboBoxProductos.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxProductos.Size = new System.Drawing.Size(202, 21);
             this.comboBoxProductos.TabIndex = 14;
             // 
             // btnAgregarProducto
