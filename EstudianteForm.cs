@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Clave5_Grupo4
 {
-    public partial class AdminForm : Form
+    public partial class EstudianteForm : Form
     {
-        public AdminForm()
+        public EstudianteForm()
         {
             InitializeComponent();
         }
 
         private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PedidosForm pedidosForm = new PedidosForm();
-            pedidosForm.Show();
+            PedidosEstudiante pedidosEstudiante = new PedidosEstudiante();
+            pedidosEstudiante.Show();
         }
     }
 }

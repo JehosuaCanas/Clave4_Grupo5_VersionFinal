@@ -1,6 +1,6 @@
 ﻿namespace Clave5_Grupo4
 {
-    partial class AdminForm
+    partial class EstudianteForm
     {
         /// <summary>
         /// Required designer variable.

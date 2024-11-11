@@ -51,8 +51,8 @@ namespace Clave5_Grupo4
                 }
                 else if (usuario.Tipo == "estudiante" || usuario.Tipo == "docente")
                 {
-                    AdminForm adminForm = new AdminForm();
-                    adminForm.Show();
+                    EstudianteForm estudianteForm = new EstudianteForm();
+                    estudianteForm.Show();
                 }
 
                 this.Hide(); // Ocultar el formulario de inicio de sesión
