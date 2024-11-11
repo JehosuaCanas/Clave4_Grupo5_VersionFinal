@@ -73,7 +73,6 @@
             // 
             // cmbMetodoPago
             // 
-            this.cmbMetodoPago.Enabled = false;
             this.cmbMetodoPago.FormattingEnabled = true;
             this.cmbMetodoPago.Items.AddRange(new object[] {
             "Efectivo",

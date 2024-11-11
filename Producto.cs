@@ -170,8 +170,10 @@ namespace Clave5_Grupo4
             return null;
         }
 
-       
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        ////Este método valida que la cantidad de productos de tipo "Antojito" no exceda de 3 y que solo se vendan entre las 14:00 y las 16:00 horas. Si se cumplen estas restricciones, devuelve true; de lo contrario, false.
         public bool ValidarRestriccionesAntojitos(List<int> productosIds)
         {
             int antojitosContador = 0;
@@ -179,7 +181,7 @@ namespace Clave5_Grupo4
             foreach (var productoId in productosIds)
             {
                 var producto = ObtenerProductoPorId(productoId);
-                if (producto != null && producto.Tipo == "Antojito")
+                if (producto != null && producto.Tipo == "antojo")
                 {
                     antojitosContador++;
                 }

@@ -1,6 +1,4 @@
-﻿
-
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +6,10 @@ using System.Windows.Forms;
 
 namespace Clave5_Grupo4
 {
-    // Modelo de Pedido con métodos de gestión
+
+    ////Jehosua Abdiel Cañas Tijerino
+    ////11/11/2024
+    // Clase de Pedido y sus Atributos
     public class Pedido
     {
         public int Id { get; set; }
@@ -19,8 +20,14 @@ namespace Clave5_Grupo4
         public DateTime FechaHora { get; set; }
         public List<ProductoPedido> Productos { get; set; } = new List<ProductoPedido>();
 
+
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        ////Conexion a la base de datos 
         private readonly MySqlConnection connection;
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
         // Constructor que recibe la conexión
         public Pedido(MySqlConnection connection)
         {
@@ -32,11 +39,17 @@ namespace Clave5_Grupo4
         {
             try
             {
+                ////Jehosua Abdiel Cañas Tijerino
+                ////11/11/2024
+                /////Abre la conexion si no esta abierta
                 if (connection.State != System.Data.ConnectionState.Open)
                 {
                     connection.Open();
                 }
 
+                ////Jehosua Abdiel Cañas Tijerino
+                ////11/11/2024
+                //// Consulta SQL para insertar un  nuevo pedido 
                 string query = "INSERT INTO pedidos (usuario_id, cafetin_id, total, metodo_pago, fecha_hora) VALUES (@usuarioId, @cafetinId, @total, @metodoPago, @fechaHora)";
                 using (var cmd = new MySqlCommand(query, connection))
                 {
@@ -56,6 +69,8 @@ namespace Clave5_Grupo4
             }
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
         // Método para agregar un producto a un pedido
         public bool AgregarProductoAPedido(int pedidoId, int productoId, int cantidad)
         {
@@ -66,6 +81,9 @@ namespace Clave5_Grupo4
                     connection.Open();
                 }
 
+                ////Jehosua Abdiel Cañas Tijerino
+                ////11/11/2024
+                /////Consulta SQL para insertar un nuevo producto al pedido 
                 string query = "INSERT INTO pedidos_productos (pedido_id, producto_id, cantidad) VALUES (@pedidoId, @productoId, @cantidad)";
                 using (var cmd = new MySqlCommand(query, connection))
                 {
@@ -83,7 +101,9 @@ namespace Clave5_Grupo4
             }
         }
 
-        // Método para obtener pedidos con productos
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
+        // Método para obtener una lista de pedidos junto con sus productos
         public List<Pedido> ObtenerPedidosConProductos()
         {
             if (connection.State != System.Data.ConnectionState.Open)
@@ -92,6 +112,10 @@ namespace Clave5_Grupo4
             }
 
             List<Pedido> pedidos = new List<Pedido>();
+
+            ////Jehosua Abdiel Cañas Tijerino
+            ////11/11/2024
+            //// Consulta SQL para obtener los datos de pedidos y productos relacionados
             string query = @"
                 SELECT p.id, u.nombre AS UsuarioNombre, l.nombre AS CafetinNombre, 
                        p.total, p.metodo_pago AS MetodoPago, p.fecha_hora AS FechaHora,
@@ -141,6 +165,8 @@ namespace Clave5_Grupo4
             return pedidos;
         }
 
+        ////Jehosua Abdiel Cañas Tijerino
+        ////11/11/2024
         // Método para eliminar un pedido
         public void EliminarPedido(int id)
         {
@@ -153,6 +179,8 @@ namespace Clave5_Grupo4
         }
     }
 
+    ////Jehosua Abdiel Cañas Tijerino
+    ////11/11/2024
     // Modelo para Producto en un Pedido
     public class ProductoPedido
     {
