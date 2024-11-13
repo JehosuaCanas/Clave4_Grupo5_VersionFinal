@@ -197,5 +197,23 @@ namespace Clave5_Grupo4
                 MessageBox.Show("No se encontraron pedidos.");
             }
         }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstudianteForm estudianteForm = new EstudianteForm();
+            estudianteForm.Show();
+            this.Close();
+        }
+
+        private void pedidosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PedidosEstudiante pedidosEstudiante = new PedidosEstudiante();
+            pedidosEstudiante.Show();
+        }
+
+        private void cerrarAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

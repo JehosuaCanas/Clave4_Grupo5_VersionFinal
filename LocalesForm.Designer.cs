@@ -45,6 +45,7 @@ namespace Clave5_Grupo4
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventosEspecialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,7 +138,8 @@ namespace Clave5_Grupo4
             this.localesToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.pedidosToolStripMenuItem,
-            this.eventosEspecialesToolStripMenuItem});
+            this.eventosEspecialesToolStripMenuItem,
+            this.cerrarAplicacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -186,6 +188,13 @@ namespace Clave5_Grupo4
             this.eventosEspecialesToolStripMenuItem.Text = "Eventos Especiales";
             this.eventosEspecialesToolStripMenuItem.Click += new System.EventHandler(this.eventosEspecialesToolStripMenuItem_Click);
             // 
+            // cerrarAplicacionToolStripMenuItem
+            // 
+            this.cerrarAplicacionToolStripMenuItem.Name = "cerrarAplicacionToolStripMenuItem";
+            this.cerrarAplicacionToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.cerrarAplicacionToolStripMenuItem.Text = "Cerrar Aplicacion";
+            this.cerrarAplicacionToolStripMenuItem.Click += new System.EventHandler(this.cerrarAplicacionToolStripMenuItem_Click);
+            // 
             // LocalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,5 +237,6 @@ namespace Clave5_Grupo4
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventosEspecialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarAplicacionToolStripMenuItem;
     }
 }

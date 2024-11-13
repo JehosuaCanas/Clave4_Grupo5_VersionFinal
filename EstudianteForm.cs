@@ -22,5 +22,10 @@ namespace Clave5_Grupo4
             PedidosEstudiante pedidosEstudiante = new PedidosEstudiante();
             pedidosEstudiante.Show();
         }
+
+        private void cerrarAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

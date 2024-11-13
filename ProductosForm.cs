@@ -315,6 +315,11 @@ namespace Clave5_Grupo4
             eventosForm.Show();
             this.Close();
         }
+
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

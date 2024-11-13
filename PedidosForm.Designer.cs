@@ -59,6 +59,7 @@
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventosEspecialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
+            this.cerrarAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -269,7 +270,8 @@
             this.localesToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.pedidosToolStripMenuItem,
-            this.eventosEspecialesToolStripMenuItem});
+            this.eventosEspecialesToolStripMenuItem,
+            this.cerrarAplicacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(911, 24);
@@ -326,6 +328,13 @@
             this.label5.Size = new System.Drawing.Size(98, 13);
             this.label5.TabIndex = 33;
             this.label5.Text = "Cantidad Producto ";
+            // 
+            // cerrarAplicacionToolStripMenuItem
+            // 
+            this.cerrarAplicacionToolStripMenuItem.Name = "cerrarAplicacionToolStripMenuItem";
+            this.cerrarAplicacionToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.cerrarAplicacionToolStripMenuItem.Text = "Cerrar Aplicacion";
+            this.cerrarAplicacionToolStripMenuItem.Click += new System.EventHandler(this.cerrarAplicacionToolStripMenuItem_Click);
             // 
             // PedidosForm
             // 
@@ -391,5 +400,6 @@
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventosEspecialesToolStripMenuItem;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem cerrarAplicacionToolStripMenuItem;
     }
 }

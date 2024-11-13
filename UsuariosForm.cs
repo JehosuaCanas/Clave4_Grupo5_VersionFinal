@@ -186,7 +186,10 @@ namespace Clave5_Grupo4
 
         }
 
-      
+        private void cerrarAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 
